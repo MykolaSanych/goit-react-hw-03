@@ -1,0 +1,15 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.error {
+  color: red;
+  height: 20px;
+  margin-left: auto;
+}

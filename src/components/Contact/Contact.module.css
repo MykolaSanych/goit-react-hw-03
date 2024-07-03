@@ -1,0 +1,13 @@
+button {
+  width: 70px;
+  height: 35px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+div {
+  gap: 5px;
+}
+h3 {
+  margin: 0;
+}
