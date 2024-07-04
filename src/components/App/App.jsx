@@ -4,6 +4,8 @@ import ContactForm from "../ContactForm/ContactForm"
 import SearchBox from "../SearchBox/SearchBox"
 import ContactList from "../ContactList/ContactList"
 import { useEffect, useState } from 'react'
+import { nanoid } from 'nanoid'
+
 
 
 
@@ -19,8 +21,22 @@ export default function App() {
     else {
       return []
     }
+    });
+
+
+
+    const handleSubmit = (values, actions) => {
+    
+        values.id = nanoid(5);
+        setContactBase([
+            ...contactBase,
+            values
+        ]);
+		actions.resetForm();
+    };
+    
   
-});
+
 
   const [inputValue, setInputValue] = useState(" ");
   const [filter, setFilter] = useState([]);
@@ -51,7 +67,7 @@ export default function App() {
 
   return ( <div>
   <h1>Phonebook</h1>
-  <ContactForm contactBase={ contactBase} setContactBase={setContactBase} />
+    <ContactForm contactBase={contactBase} handleSubmit={ handleSubmit} />
   <SearchBox inputValue={inputValue} setInputValue={setInputValue} />
   <ContactList deleteContact={deleteContact} contactBase={filter}/>
 </div>

@@ -1,21 +1,11 @@
-import { Field, Formik, Form } from "formik";
+import { Field, Formik, Form } from "formik"
 import css from "./ContactForm.module.css"
-import { nanoid } from 'nanoid'
-import * as Yup from "yup";
-import { ErrorMessage } from "formik";
+import { ErrorMessage } from "formik"
+import * as Yup from "yup"
 
 
 
-export default function ContactForm({ contactBase, setContactBase }) {
-    const handleSubmit = (values, actions) => {
-    
-        values.id = nanoid(5);
-        setContactBase([
-            ...contactBase,
-            values
-        ]);
-		actions.resetForm();
-    };
+export default function ContactForm({ handleSubmit}) {
     const initialValues ={
         id:"",
         name:"",
